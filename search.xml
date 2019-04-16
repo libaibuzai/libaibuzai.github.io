@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[悼允上人]]></title>
+    <url>%2F2019%2F03%2F23%2F2019-03-23-%E6%82%BC%E5%85%81%E4%B8%8A%E4%BA%BA%2F</url>
+    <content type="text"><![CDATA[悼允上人 [宋] 释行海 白云寺里同听讲，卜得山斋竹树幽。 君已不来梅自发，世皆如梦水长流， 寒灯苦志归黄土，俗客轻人将白头。 万惜少年多是死，静思吾道转堪愁。 如有侵权行为，请点击这里联系我删除 如发现疑问或者错误点击反馈]]></content>
+      <categories>
+        <category>诗</category>
+      </categories>
+      <tags>
+        <tag>诗</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[EVP_DecryptFinal_ex:bad decrypt 和 出现Illegal Buffer Error这种的情况]]></title>
+    <url>%2F2019%2F03%2F20%2F2019-03-20-%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%8E%88%E6%9D%83%E9%97%AE%E9%A2%981%2F</url>
+    <content type="text"><![CDATA[看到这里 你的问题就不要担心了 大家的问题都是一样的。官网的实例是没问题的 当前 Bug 的表现 - 预期表现可以对encryptedData正常解密。 复现路径点击登录按钮后，小程序本地数据缓存冷启动后还还会有吗，微信小程序教程。小程序调用wx.login()，再将code、iv、encrypedData一起发往后端程序，后端程序调用微信api接口（api.weixin.qq.com/sns/jscode2session）希望获取openId，但经常会出现上图中的错误。 复现过程： 1、这个问题不是持续连续发生，而是在一段时间未操作小程序时，再次点击登录按钮触发登录操作的第一次时会发生，第二次及以后的登录操作则会成功。如果再过一段时间未操作小程序，当第一次登录的时候还是会出现这个现象——第一次登录不成功，后续登录操作可以成功。 2、问题的关键在于解密程序报错。将上述的ecryptedData、iv、session_key放入官方文档（貌似其中还有包括使用wx.getUserInfo()的描述，是否也要更新一下）中提供的demo.js程序运行，也会出现报错。 下面是我的解决 ： 一定要保证 新code的获取 在 getUserInfo或getPhoneNumber 之前 而且 每一次解密授权所用的code 都不是一样的 onload里先进行wx.login 获取code，再通过按钮开始授权 获取iv和encryptedData 之后就不会报错了 O(∩_∩)O哈哈~ 这可能也是 小程序考虑授权先后出现的错误问题 才把全部授权按钮使用主动触发的方式的 解决方案的出处：https://developers.weixin.qq.com/community/develop/doc/000808d32c06101b39d6032c956000 如有侵权行为，请点击这里联系我删除 如发现疑问或者错误点击反馈]]></content>
+      <categories>
+        <category>小程序</category>
+      </categories>
+      <tags>
+        <tag>小程序</tag>
+        <tag>小程序授权问题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo博客 NexT主题从v5更新到v6的记录及总结.md]]></title>
+    <url>%2F2018%2F12%2F03%2F2018-12-03%20Hexo%E5%8D%9A%E5%AE%A2NexT%E4%B8%BB%E9%A2%98%E4%BB%8Ev5.x.x%E6%9B%B4%E6%96%B0%E5%88%B0v6.x.x%E7%9A%84%E8%AE%B0%E5%BD%95%E5%8F%8A%E6%80%BB%E7%BB%93%2F</url>
+    <content type="text"><![CDATA[Hexo博客 NexT主题从v5更新到v6的记录及总结今天索性升级一下我的主题 自定义配置样式还是很多的 需要详细修改配置https://sevencho.github.io/archives/14534beb.html #丰富插件和功能 参考博客https://zhuanlan.zhihu.com/p/26625249 如有侵权行为，请点击这里联系我删除 如发现疑问或者错误点击反馈]]></content>
+      <categories>
+        <category>Hexo</category>
+        <category>NexT</category>
+      </categories>
+      <tags>
+        <tag>NexT</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[es6之var let 和 const终极PK]]></title>
+    <url>%2F2018%2F08%2F02%2F2018-08-02%20es6%E4%B9%8Bvar%20let%20%E5%92%8C%20const%E7%BB%88%E6%9E%81PK%2F</url>
+    <content type="text"><![CDATA[直接上猛料 let 取代 varES6提出了两个新的声明变量的命令：let和const。其中，let完全可以取代var，因为两者语义相同，而且let没有副作用。 &apos;use strict&apos;; if (true) { let x = &apos;hello&apos;; } for (let i = 0; i &lt; 10; i++) { console.log(i); } 上面代码如果用var替代let，实际上就声明了两个全局变量，这显然不是本意。变量应该只在其声明的代码块内有效，var命令做不到这一点。 var命令存在变量提升效用，let命令没有这个问题。 &apos;use strict&apos;; if(true) { console.log(x); // ReferenceError let x = &apos;hello&apos;; } 上面代码如果使用var替代let，console.log那一行就不会报错，而是会输出undefined，因为变量声明提升到代码块的头部。这违反了变量先声明后使用的原则。 所以，建议不再使用var命令，而是使用let命令取代。 在let和const之间，建议优先使用const尤其是在全局环境，不应该设置变量，只应设置常量。 const优于let有几个原因。 一个是const可以提醒阅读程序的人，这个变量不应该改变； 另一个是const比较符合函数式编程思想，运算不改变值，只是新建值，而且这样也有利于将来的分布式运算； 最后一个原因是 JavaScript 编译器会对const进行优化，所以多使用const，有利于提高程序的运行效率，也就是说let和const的本质区别，其实是编译器内部的处理不同。 // bad var a = 1, b = 2, c = 3; // good const a = 1; const b = 2; const c = 3; // best const [a, b, c] = [1, 2, 3]; const 声明常量还有两个好处， 阅读代码的人立刻会意识到不应该修改这个值， 防止了无意间修改变量值所导致的错误。 所有的函数都应该设置为常量。 感想：长远来看，JavaScript可能会有多线程的实现（比如Intel的River Trail那一类的项目），这时let表示的变量，只应出现在单线程运行的代码中，不能是多线程共享的，这样有利于保证线程安全。 这里有var、let、const 区别？详尽对比和分析 如有侵权行为，请点击这里联系我删除 如发现疑问或者错误点击反馈]]></content>
+      <categories>
+        <category>es6</category>
+      </categories>
+      <tags>
+        <tag>es6</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[es6之顶层对象的属性]]></title>
+    <url>%2F2018%2F06%2F24%2F2018-06-24%20es6%E4%B9%8B%E9%A1%B6%E5%B1%82%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B1%9E%E6%80%A7%2F</url>
+    <content type="text"><![CDATA[顶层对象的属性顶层对象，在浏览器环境指的是window对象，在Node指的是global对象。ES5之中，顶层对象的属性与全局变量是等价的。 window.a = 1; a // 1 a = 2; window.a // 2 上面代码中，顶层对象的属性赋值与全局变量的赋值，是同一件事。 顶层对象的属性与全局变量挂钩，被认为是JavaScript语言最大的设计败笔之一。这样的设计带来了几个很大的问题，首先是没法在编译时就报出变量未声明的错误，只有运行时才能知道（因为全局变量可能是顶层对象的属性创造的，而属性的创造是动态的）；其次，程序员很容易不知不觉地就创建了全局变量（比如打字出错）；最后，顶层对象的属性是到处可以读写的，这非常不利于模块化编程。另一方面，window对象有实体含义，指的是浏览器的窗口对象，顶层对象是一个有实体含义的对象，也是不合适的。 ES6为了改变这一点，一方面规定，为了保持兼容性，var命令和function命令声明的全局变量，依旧是顶层对象的属性；另一方面规定，let命令、const命令、class命令声明的全局变量，不属于顶层对象的属性。也就是说，从ES6开始，全局变量将逐步与顶层对象的属性脱钩。 var a = 1; // 如果在Node的REPL环境，可以写成global.a // 或者采用通用方法，写成this.a window.a // 1 let b = 1; window.b // undefined 上面代码中，全局变量a由var命令声明，所以它是顶层对象的属性；全局变量b由let命令声明，所以它不是顶层对象的属性，返回undefined。 global 对象ES5的顶层对象，本身也是一个问题，因为它在各种实现里面是不统一的。 浏览器里面，顶层对象是window，但 Node 和 Web Worker 没有window。浏览器和 Web Worker 里面，self也指向顶层对象，但是Node没有self。Node 里面，顶层对象是global，但其他环境都不支持。同一段代码为了能够在各种环境，都能取到顶层对象，现在一般是使用this变量，但是有局限性。 全局环境中，this会返回顶层对象。但是，Node模块和ES6模块中，this返回的是当前模块。函数里面的this，如果函数不是作为对象的方法运行，而是单纯作为函数运行，this会指向顶层对象。但是，严格模式下，这时this会返回undefined。不管是严格模式，还是普通模式，new Function(‘return this’)()，总是会返回全局对象。但是，如果浏览器用了CSP（Content Security Policy，内容安全政策），那么eval、new Function这些方法都可能无法使用。综上所述，很难找到一种方法，可以在所有情况下，都取到顶层对象。下面是两种勉强可以使用的方法。 // 方法一 (typeof window !== &apos;undefined&apos; ? window : (typeof process === &apos;object&apos; &amp;&amp; typeof require === &apos;function&apos; &amp;&amp; typeof global === &apos;object&apos;) ? global : this); // 方法二 var getGlobal = function () { if (typeof self !== &apos;undefined&apos;) { return self; } if (typeof window !== &apos;undefined&apos;) { return window; } if (typeof global !== &apos;undefined&apos;) { return global; } throw new Error(&apos;unable to locate global object&apos;); }; 现在有一个提案，在语言标准的层面，引入global作为顶层对象。也就是说，在所有环境下，global都是存在的，都可以从它拿到顶层对象。 垫片库system.global模拟了这个提案，可以在所有环境拿到global。 // CommonJS的写法 require(&apos;system.global/shim&apos;)(); // ES6模块的写法 import shim from &apos;system.global/shim&apos;; shim(); 上面代码可以保证各种环境里面，global对象都是存在的。 // CommonJS的写法 var global = require(&apos;system.global&apos;)(); // ES6模块的写法 import getGlobal from &apos;system.global&apos;; const global = getGlobal(); 上面代码将顶层对象放入变量global。 感想：存在即合理 只是一个说辞 我们需要做的是不断的完善它，让它真的合理。毕竟罗马不是一日建成的！ 这里有var、let、const 区别？详尽对比和分析，希望可以帮你更好的理解。 如有侵权行为，请点击这里联系我删除 如发现疑问或者错误点击反馈]]></content>
+      <categories>
+        <category>es6</category>
+      </categories>
+      <tags>
+        <tag>es6</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[es6之let 和 const]]></title>
+    <url>%2F2018%2F06%2F22%2F2018-06-22%20es6%E4%B9%8Blet%20%E5%92%8C%20const%2F</url>
+    <content type="text"><![CDATA[let 命令##let特性： ###1.只在let命令所在的代码块内有效。 a. { let a = 10; var b = 1; } a // ReferenceError: a is not defined. b // 1 b. （let 与 for循环的用法） 要求必须 等let声明语句执行完之后，变量才能使用，不然会报Uncaught ReferenceError错误。 var a = []; for (let i = 0; i &lt; 10; i++) { a[i] = function () { console.log(i); }; } a[6](); // 6 如同for 循环里产生了10次i的循环并没有被更新 a[2](); // 2 a[4](); // 4 a[7](); // 7 a[0](); // 0 #2.不存在变量提升 // var 的情况 console.log(foo); // 输出undefined var foo = 2; // let 的情况 console.log(bar); // 报错ReferenceError let bar = 2; ###3.暂时性死区 console.log(aicoder); // 错误：Uncaught ReferenceError ... let aicoder = &apos;aicoder.com&apos;; // 这里就可以安全使用aicoder 有些“死区”比较隐蔽，不太容易发现。 function bar(x = y, y = 2) { return [x, y]; } bar(); // 报错 //因为参数x默认值等于另一个参数y，而此时y还没有声明，属于”死区“。 ES6 明确规定，如果区块中存在let和const命令，这个区块对这些命令声明的变量，从一开始就形成了封闭作用域。凡是在声明之前就使用这些变量，就会报错。 总之，在代码块内，使用let命令声明变量之前，该变量都是不可用的。这在语法上，称为“暂时性死区”（temporal dead zone，简称 TDZ）。 ###4.let变量不能重复声明 let a = 0; let a = &apos;sss&apos;; // Uncaught SyntaxError: Identifier &apos;a&apos; has already been declared ######**ES6规定暂时性死区和let、const语句不出现变量提升，主要是为了减少运行时错误，防止在变量声明前就使用这个变量，从而导致意料之外的行为。这样的错误在ES5是很常见的，现在有了这种规定，避免此类错误就很容易了。 ######总之，暂时性死区的本质就是，只要一进入当前作用域，所要使用的变量就已经存在了，但是不可获取，只有等到声明变量的那一行代码出现，才可以获取和使用该变量。 #2. 块级作用域 为什么需要块级作用域？ 第一：内层变量可能会覆盖外层变量。 var tmp = new Date(); function f() { console.log(tmp); if (false) { var tmp = &quot;hello world&quot;; } } f(); // undefined 第二：用来计数的循环变量泄露为全局变量。 var s = &apos;hello&apos;; for (var i = 0; i &lt; s.length; i++) { console.log(s[i]); } console.log(i); // 5 块级作用域特点： 1.ES6允许块级作用域的任意嵌套。 {{{{{let insane = 'Hello World'}}}}}; 2.允许在块级作用域之中声明函数。 // ES6严格模式 &apos;use strict&apos;; if (true) { function f() {} } // 不报错 ES6 规定，块级作用域之中，函数声明语句的行为类似于let，在块级作用域之外不可引用。 特别注意： ES6的块级作用域允许声明函数的规则，只在使用大括号的情况下成立，如果没有使用大括号，就会报错。 // 不报错 &apos;use strict&apos;; if (true) { function f() {} } // 报错 &apos;use strict&apos;; if (true) function f() {} #const命令 1.const声明一个只读的常量。一旦声明，常量的值就不能改变。 const PI = 3.1415; PI // 3.1415 PI = 3; // TypeError: Assignment to constant variable. 2.const声明的变量不得改变值，这意味着，const一旦声明变量，就必须立即初始化，不能留到以后赋值。 const foo; // SyntaxError: Missing initializer in const declaration 3.const的作用域与let命令相同：只在声明所在的块级作用域内有效。 if (true) { const MAX = 5; } MAX // Uncaught ReferenceError: MAX is not defined const命令声明的常量也是不提升，同样存在暂时性死区，只能在声明的位置后面使用。 if (true) { console.log(MAX); // ReferenceError const MAX = 5;} const声明的常量，也与let一样不可重复声明。 var message = “Hello!”;let age = 25; // 以下两行都会报错const message = “Goodbye!”;const age = 30; 6.对于复合类型的变量，变量名不指向数据，而是指向数据所在的地址。const命令只是保证变量名指向的地址不变，并不保证该地址的数据不变，所以将一个对象声明为常量必须非常小心。 const foo = {};foo.prop = 123; foo.prop// 123 foo = {}; // TypeError: “foo” is read-only 下面是另一个例子（可以为其添加新属性。） const a = [];a.push(‘Hello’); // 可执行a.length = 0; // 可执行a = [‘Dave’]; // 报错 ES5只有两种声明变量的方法：var命令和function命令。ES6除了添加let和const命令，后面章节还会提到，另外两种声明变量的方法：import命令和class命令。所以，ES6一共有6种声明变量的方法。 感想：明白了前辈们对javascript的不断的优化的心情，感谢他们的贡献我将好好细读文档。不服厚爱！ 这里有var、let、const 区别？详尽对比和分析 如有侵权行为，请点击这里联系我删除 如发现疑问或者错误点击反馈]]></content>
+      <categories>
+        <category>es6</category>
+      </categories>
+      <tags>
+        <tag>es6</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[es6之编码规范]]></title>
+    <url>%2F2018%2F06%2F18%2F2018-06-18%20es6%E4%B9%8B%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83%2F</url>
+    <content type="text"><![CDATA[let 命令##let特性： ###1.只在let命令所在的代码块内有效。 a. { let a = 10; var b = 1; } a // ReferenceError: a is not defined. b // 1 b. （let 与 for循环的用法） 要求必须 等let声明语句执行完之后，变量才能使用，不然会报Uncaught ReferenceError错误。 var a = []; for (let i = 0; i &lt; 10; i++) { a[i] = function () { console.log(i); }; } a[6](); // 6 如同for 循环里产生了10次i的循环并没有被更新 a[2](); // 2 a[4](); // 4 a[7](); // 7 a[0](); // 0 #2.不存在变量提升 // var 的情况 console.log(foo); // 输出undefined var foo = 2; // let 的情况 console.log(bar); // 报错ReferenceError let bar = 2; ###3.暂时性死区 console.log(aicoder); // 错误：Uncaught ReferenceError ... let aicoder = &apos;aicoder.com&apos;; // 这里就可以安全使用aicoder 有些“死区”比较隐蔽，不太容易发现。 function bar(x = y, y = 2) { return [x, y]; } bar(); // 报错 //因为参数x默认值等于另一个参数y，而此时y还没有声明，属于”死区“。 ES6 明确规定，如果区块中存在let和const命令，这个区块对这些命令声明的变量，从一开始就形成了封闭作用域。凡是在声明之前就使用这些变量，就会报错。 总之，在代码块内，使用let命令声明变量之前，该变量都是不可用的。这在语法上，称为“暂时性死区”（temporal dead zone，简称 TDZ）。 ###4.let变量不能重复声明 let a = 0; let a = &apos;sss&apos;; // Uncaught SyntaxError: Identifier &apos;a&apos; has already been declared ######**ES6规定暂时性死区和let、const语句不出现变量提升，主要是为了减少运行时错误，防止在变量声明前就使用这个变量，从而导致意料之外的行为。这样的错误在ES5是很常见的，现在有了这种规定，避免此类错误就很容易了。 ######总之，暂时性死区的本质就是，只要一进入当前作用域，所要使用的变量就已经存在了，但是不可获取，只有等到声明变量的那一行代码出现，才可以获取和使用该变量。 #2. 块级作用域 为什么需要块级作用域？ 第一：内层变量可能会覆盖外层变量。 var tmp = new Date(); function f() { console.log(tmp); if (false) { var tmp = &quot;hello world&quot;; } } f(); // undefined 第二：用来计数的循环变量泄露为全局变量。 var s = &apos;hello&apos;; for (var i = 0; i &lt; s.length; i++) { console.log(s[i]); } console.log(i); // 5 块级作用域特点： 1.ES6允许块级作用域的任意嵌套。 {{{{{let insane = 'Hello World'}}}}}; 2.允许在块级作用域之中声明函数。 // ES6严格模式 &apos;use strict&apos;; if (true) { function f() {} } // 不报错 ES6 规定，块级作用域之中，函数声明语句的行为类似于let，在块级作用域之外不可引用。 特别注意： ES6的块级作用域允许声明函数的规则，只在使用大括号的情况下成立，如果没有使用大括号，就会报错。 // 不报错 &apos;use strict&apos;; if (true) { function f() {} } // 报错 &apos;use strict&apos;; if (true) function f() {} #const命令 1.const声明一个只读的常量。一旦声明，常量的值就不能改变。 const PI = 3.1415; PI // 3.1415 PI = 3; // TypeError: Assignment to constant variable. 2.const声明的变量不得改变值，这意味着，const一旦声明变量，就必须立即初始化，不能留到以后赋值。 const foo; // SyntaxError: Missing initializer in const declaration 3.const的作用域与let命令相同：只在声明所在的块级作用域内有效。 if (true) { const MAX = 5; } MAX // Uncaught ReferenceError: MAX is not defined const命令声明的常量也是不提升，同样存在暂时性死区，只能在声明的位置后面使用。 if (true) { console.log(MAX); // ReferenceError const MAX = 5;} const声明的常量，也与let一样不可重复声明。 var message = “Hello!”;let age = 25; // 以下两行都会报错const message = “Goodbye!”;const age = 30; 6.对于复合类型的变量，变量名不指向数据，而是指向数据所在的地址。const命令只是保证变量名指向的地址不变，并不保证该地址的数据不变，所以将一个对象声明为常量必须非常小心。 const foo = {};foo.prop = 123; foo.prop// 123 foo = {}; // TypeError: “foo” is read-only 下面是另一个例子（可以为其添加新属性。） const a = [];a.push(‘Hello’); // 可执行a.length = 0; // 可执行a = [‘Dave’]; // 报错 ES5只有两种声明变量的方法：var命令和function命令。ES6除了添加let和const命令，后面章节还会提到，另外两种声明变量的方法：import命令和class命令。所以，ES6一共有6种声明变量的方法。 感想：明白了前辈们对javascript的不断的优化的心情，感谢他们的贡献我将好好细读文档。不服厚爱！ 这里有var、let、const 区别？详尽对比和分析 如有侵权行为，请点击这里联系我删除 如发现疑问或者错误点击反馈]]></content>
+      <categories>
+        <category>es6</category>
+      </categories>
+      <tags>
+        <tag>es6</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[修改默认浏览器滚动条]]></title>
+    <url>%2F2017%2F10%2F08%2F2017-10-8-%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E6%B5%8F%E8%A7%88%E5%99%A8%E6%BB%9A%E5%8A%A8%E6%9D%A1%2F</url>
+    <content type="text"><![CDATA[修改默认浏览器滚动条::-webkit-scrollbar{ width:3px; height:0px;} /* 滚动条的大小 */ ::-webkit-scrollbar-track {background-color: #6d7277;} /* 滚动条的滑轨背景颜色 */ ::-webkit-scrollbar-thumb {background-color:#4b4d50; border-radius:0px;} /* 滑块颜色 */ /*::-webkit-scrollbar-button {background-color: #7c2929;} /* 滑轨两头的监听按钮颜色 ::-webkit-scrollbar-corner {background-color: black;} /* 横向滚动条和纵向滚动条相交处尖角的颜色 */ 如有侵权行为，请点击这里联系我删除 如发现疑问或者错误点击反馈]]></content>
+      <categories>
+        <category>css</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[angular控制器间的通讯]]></title>
+    <url>%2F2017%2F07%2F20%2F2017-07-20-angular%E6%8E%A7%E5%88%B6%E5%99%A8%E9%80%9A%E8%AE%AF%2F</url>
+    <content type="text"><![CDATA[ng笔记broadcast&amp;&amp;on&amp;&amp;emit&lt;script&gt; varmyapp=angular.module(&apos;TestApp&apos;,[&apos;ng&apos;]); myapp.controller(&apos;ParentCtrl&apos;,function($scope){ $scope.$on(&apos;to-child&apos;,function(e,d){ console.log(&apos;[ParentCtrl]to-child&apos;); }); $scope.$on(&apos;to-parent&apos;,function(e,d){ console.log(&apos;[ParentCtrl]to-parent&apos;); });}) myapp.controller(&apos;SelfCtrl&apos;,function($scope){ $scope.click=function(){ $scope.$broadcast(&apos;to-child&apos;,&apos;haha&apos;); $scope.$emit(&apos;to-parent&apos;,&apos;hehe&apos;);}}) myapp.controller(&apos;ChildCtrl&apos;,function($scope){ $scope.$on(&apos;to-child&apos;,function(e,d){ console.log(&apos;[ChildCtrl]to-child&apos;); }); $scope.$on(&apos;to-parent&apos;,function(e,d){ console.log(&apos;[ChildCtrl]to-parent&apos;); }); }) myapp.controller(&apos;BroCtrl&apos;,function($scope){ $scope.$on(&apos;to-child&apos;,function(e,d){ console.log(&apos;[BroCtrl]to-child&apos;); }); $scope.$on(&apos;to-parent&apos;,function(e,d){ console.log(&apos;[BroCtrl]to-parent&apos;); }); }); &lt;/script&gt; &lt;div ng-controller=&quot;ParentCtrl&quot;&gt; &lt;div ng-controller=&quot;SelfCtrl&quot;&gt; &lt;a class=&quot;btn&quot;ng-click=&quot;click()&quot;&gt;clickme&lt;/a&gt; &lt;div ng-controller=&quot;ChildCtrl&quot;&gt; &lt;span&gt;{{great}}&lt;/span&gt; &lt;p&gt;参数：{{canshu}}&lt;/p&gt; &lt;/div&gt; &lt;/div&gt; &lt;div ng-controller=&quot;BroCtrl&quot;&gt;{{text}}&lt;/div&gt; &lt;/div&gt; Notes上面的例子可以看到，事件和事件发生者的兄弟是没有关系的，怎样都收不到。 如有侵权行为，请点击这里联系我删除 如发现疑问或者错误点击反馈]]></content>
+      <categories>
+        <category>angular</category>
+      </categories>
+      <tags>
+        <tag>angular</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[工欲善其事之markdown教程篇]]></title>
+    <url>%2F2017%2F05%2F23%2F2017-05-23-%E5%B7%A5%E6%AC%B2%E5%96%84%E5%85%B6%E4%BA%8B%E4%B9%8Bmarkdown%E6%95%99%E7%A8%8B%E7%AF%87%2F</url>
+    <content type="text"><![CDATA[Markdown基本语法1、因为是纯文本，所以只要支持Markdown的地方都能获得一样的编辑效果，可以让作者摆脱排版的困扰，专心写作。2、操作简单。比如:WYSIWYG编辑时标记个标题，先选中内容，再点击导航栏的标题按钮，选择几级标题。要三个步骤。而Markdown只需要在标题内容前加#即可4、需要记一些语法（当然，也是很简单的） 一、标题在想要设置为标题的文字前面加#来表示一个#是一级标题，二个#是二级标题，以此类推。支持六级标题。 注：标准语法一般在#后跟个空格再写文字，貌似简书不加空格也行。 示例： # 这是一级标题 ## 这是二级标题 ### 这是三级标题 #### 这是四级标题 ##### 这是五级标题 ###### 这是六级标题 效果： 这是一级标题这是二级标题这是三级标题这是四级标题这是五级标题这是六级标题二、字体加粗要加粗的文字左右分别用两个*号包起来 斜体要倾斜的文字左右分别用一个*号包起来 斜体加粗要倾斜和加粗的文字左右分别用三个*号包起来 删除线要加删除线的文字左右分别用两个~~号包起来 示例： **这是加粗的文字** *这是倾斜的文字*` ***这是斜体加粗的文字*** ~~这是加删除线的文字~~ 效果如下： 这是加粗的文字这是倾斜的文字`这是斜体加粗的文字这是加删除线的文字 三、引用在引用的文字前加&gt;即可。引用也可以嵌套，如加两个&gt;&gt;三个&gt;&gt;&gt;n个…貌似可以一直加下去，但没神马卵用 示例： &gt;这是引用的内容 &gt;&gt;这是引用的内容 &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;这是引用的内容 效果如下： 这是引用的内容 这是引用的内容 这是引用的内容 四、分割线三个或者三个以上的 - 或者 * 都可以。 示例： --- ---- *** ***** 效果如下：可以看到，显示效果是一样的。 五、图片语法：![图片alt](图片地址 &apos;&apos;图片title&apos;&apos;) 图片alt就是显示在图片下面的文字，相当于对图片内容的解释。图片title是图片的标题，当鼠标移到图片上时显示的内容。title可加可不加 示例：![blockchain](https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/ u=702257389,1274025419&amp;fm=27&amp;gp=0.jpg &quot;区块链&quot;) 效果如下： 上传本地图片直接点击导航栏的图片标志，选择图片即可 六、超链接语法：】 [超链接名](超链接地址 &quot;超链接title&quot;) title可加可不加 示例： [百度](http://baidu.com) 效果如下： 百度 注：Markdown本身语法不支持链接在新页面中打开，貌似简书做了处理，是可以的。别的平台可能就不行了，如果想要在新页面中打开的话可以用html语言的a标签代替。 示例： &lt;a href=&quot;https://www.baidu.com&quot; target=&quot;_blank&quot;&gt;百度&lt;/a&gt; 效果如下：百度 七、列表##无序列表 语法： 无序列表用 - + * 任何一种都可以 - 列表内容 + 列表内容 * 列表内容 注意：- + * 跟内容之间都要有一个空格 效果如下： 列表内容 列表内容 列表内容 有序列表语法： // 数字加点 1.列表内容 2.列表内容 3.列表内容 注意：序号跟内容之间要有空格 效果如下： 1.列表内容2.列表内容3.列表内容 列表嵌套这里语法有些不同如下： - 一级无序列表内容 - 二级无序列表内容 - 二级无序列表内容 - 二级无序列表内容 - 一级无序列表内容 1. 二级有序列表内容 2. 二级有序列表内容 3. 二级有序列表内容 1. 一级有序列表内容 - 二级无序列表内容 - 二级无序列表内容 - 二级无序列表内容 2. 一级有序列表内容 1. 二级有序列表内容 2. 二级有序列表内容 3. 二级有序列表内容 4. 二级有序列表内容 八、表格语法： 表头|表头|表头 ---|:--:|---: 内容|内容|内容 内容|内容|内容 第二行分割表头和内容。 - 有一个就行，为了对齐，多加了几个 文字默认居左 我们可以设置表格的对齐方式： -: 设置内容和标题栏居右对齐。 :- 设置内容和标题栏居左对齐。 :-: 设置内容和标题栏居中对齐。 示例： | 左对齐 | 右对齐 | 居中对齐 | | :-----| ----: | :----: | | 单元格 | 单元格 | 单元格 | | 单元格 | 单元格 | 单元格 | 效果如下： 左对齐 居中对齐 右对齐 单元格 单元格 单元格 单元格 单元格 单元格 九、代码 注：直接tab 缩进或四个空格 也可以实现代码块 语法： 单行代码：代码之间分别用一个反引号包起来 `代码内容` 代码块：代码之间分别用三个反引号包起来，且两边的反引号单独占一行 点点点 代码... 代码... 代码... 点点点 注：为了防止转译，前后三个反引号使用’点点点’，实际是没有的 3个`。这里只是用来演示。 示例： 单行代码 `create database hero;` 代码块 点点点 function fun(){ echo &quot;这是一句非常牛逼的代码&quot;; } fun(); 点点点 效果如下： 单行代码 create database hero; 代码块 1234function fun()&#123; echo &quot;这是一句非常牛逼的代码&quot;;&#125;fun(); 感想：语法虽然很简单还是多使用才能得心应手 来源：简书作者：高鸿祥链接：https://www.jianshu.com/p/191d1e21f7ed 如有侵权行为，请点击这里联系我删除 如发现疑问或者错误点击反馈]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[学习是一件逆人性的事]]></title>
+    <url>%2F2016%2F12%2F02%2F2017-09-13-%E5%AD%A6%E4%B9%A0%E6%98%AF%E4%B8%80%E4%BB%B6%E9%80%86%E4%BA%BA%E6%80%A7%E7%9A%84%E4%BA%8B%2F</url>
+    <content type="text"><![CDATA[投资自己的时间其实，时间就像金钱一样，你得学会投资时间，把时间投资在有价值有意义的地方，你就会有“更多的时间”。 1.花时间学习基础知识，花时间读文档。 我发现，很多程序员都把时间都浪费在了查错上。究其根本原因就是基础知识不完整，没有好好地把技术相关的用户文档读完就仓促上手做事情了。其实只要把基础打扎实，认真读一下文档，你会省出很多很多的时间。系统地学习一门技术是非常关键的，所以这个时间是值得投资的。 2.花时间在解放自己生产力的事上。 在自动化、可配置、可重用、可扩展上要多花时间。对于软件开发来说，能自动化的事，就算多花点时间也要自动化，因为下次就不用花时间了。让自己的软件模块可以更灵活地配置和扩展，这样如果有需求变更或是有新需求的时候，可以不用改代码，或者就算要改代码也很容易。这里，可能很多人会说不要过度设计，对于这个观点，我既同意，也反对。的确，过度设计不好，但是只要是能在未来节省时间的，宁可这个项目延期，我也会做的。花时间在解放自己的事上是最有意义的了。 3.花时间在让自己成长的事上。注意，晋升并不代表成长，成长不应该只看在一个公司内，而是要看在行业内，在行业内的成长才是真正的成长。所以，把时间花在能让自己成长，能让自己有更强的竞争力，能让自己有更大的视野，能让自己有更多可能性的事情上。这样的时间投资才是有价值的。 4.花时间在建立高效的环境上。我相信你和我会有一样的一个习惯，那就“工欲善其事，必先利其器”。我们程序员在做事之前都喜欢把自己的工作环境整理到自己喜欢的状态下。比如使用趁手的开发工具，使用趁手的设备。这里，我想把这个事扩大一下，花些时间在影响你身边的人上，比如你的同事，你的产品经理，你的老板，去影响他们，让他们理解你，让他们配合你来建立更好的流程和管理方法。在这个方向上花时间也是很值得的。 规划自己的时间定义好优先级。无论你写不写出来，你一定都会有一个自己的 to-do list。有 to-do list 并不是什么高深的事。更重要的是，你要知道什么事是重要的，什么事是紧急的，什么事重要但不紧急，什么事又重要又紧急。这有利于你划分优先级。 最短作业优先。对于相同优先级的事，我个人喜欢的是“最短作业优先”的调度算法。理由是，先把可以快速做完的事做完，看到 to-do list 上划掉一个任务，看到任何的数据在减少，对于自己也好，对于老板也好。老板可以看到你的工作进度飞快，一方面有利于为后面复杂的工作争取更多的时间（老板只有在你有 Deliver 的时候才愿意给你更多的时间），另一方面，看到任务列表的减少会让你的心态更为积极。 而反过来，你花太多的时间在长作业上，长作业通常很容易出现“意外情况”让你花更多的时间，但此时你发现还有很多别的事没有做，这会让你产生焦虑感，产生更多的压力，进而导致更慢的生产效率。 想清楚再做。我发现很多时候，我们没有想清楚就开干了，边干边想，这样的工作方式其实很糟糕。你会发现，如果你没有想清楚，你总是要对已完成的工作进行返工，返工好几次，其实是非常浪费时间的。 所以，对于一些没想清楚的事，或是自己不太有信心的事，还是先看看有没有已有的成熟解决方案，或是找更牛的人来给你把把关，帮你出出主意，看看有没有更好、更简单的方式。 关注长期利益规划。要多关注长远可以节省多少时间，而不是当前会花费多少时间。长期成本会比短期成本大得多。所以，宁可在短期延期，也不要透支未来。这里的逻辑是，工作上的事你永远也做不完的，长痛不如短痛。 我一年要做 10 个项目，我宁可第 1 或第 2 个项目被老板骂，但是我可以赢得后面 8 个项目，从后面 8 个项目上把之前失去的找回来。而如果反过来的话，我虽然一开始得到了老板的信任，但是后面越来越玩不动，最终搬起一块大石头砸了自己的脚。而且，不关注长远利益的人，基本上来说也是很难有成长的。 也就是说，你要学会规划自己的行动计划，不是短期的，而是一个中长期的。我个人建议是按季度来规划，这个季度做什么，达到什么目标，一年往前走四步，而不是只考虑眼下。 用好自己的时间将军赶路不追小兔。这个世界有太多的东西会让我们分心和跑偏。能专注地把时间投入到一个有价值的事上是非常重要的。确定自己的目标，专注达到这个目标，而不是分心。将军的目标是要攻城，而不是追兔子。所以，你要学会过滤掉与自己目标无关的事，不要让那些无关的事控制自己。 比如，不要让别人来影响自己的心情，心情被影响了，你一下就会什么都不想干了。做自己心情的主人，不要让别人 hack 了你的心情。再比如，知道哪些是自己可以控制的事，哪些是自己控制不了的事，在自己能控制的地方花时间。 再比如，知道哪些是更有效的路径，是花时间改变别人，还是花时间去寻找志同道合的人。不与不如自己的人争论，也不要尝试花时间去叫醒那些装睡的人，这些都是非常浪费时间的事。多花时间在有产出的事上，少花时间在说服别人的事上。 形成习惯。再好的方法，如果没有形成习惯，不能在实际的工作和生活中解决实际问题，都将成为空谈。如果你是个追求上进的人，我相信一定看过很多时间管理方法的文章和书籍，并且看的时候还会有些振奋，内心有时还会不自觉地想，“嗯，嗯！这个方法不错，正是我需要的，可以解决我的问题……”但很多时候都坚持不了几天就抛之脑后了。 所以，在讲述完如何争取时间，及如何使用时间之后，我想分享一下如何将这些时间管理方法形成习惯，因为我坚信：“做”比“做好”更重要。养成一个好习惯通常需要 30 天左右的时间，尤其在最初的几天就更为重要了。这时，不妨将文章中提到的方法和几个要点，写在某本书或者笔记本的扉页上，方便查看，时刻提醒自己。 而且，你可以结合自己的实际情况，适当做出调整。我的方法是我根据自己的情况总结的，不一定完全适合你，你完全可以基于我说的几个原则，发掘其他更适合自己的方法，这样才能更有利于形成习惯，对你更有帮助。 形成正反馈。在前面的文章中，我提到过，要有正反馈，也就是成就感，有助于完成一些看似难以完成的事儿。比如，我们说过，学习是逆人性的事儿，但如果在学习过程中不断地有正反馈，就更利于我们坚持下去。要让自己有正反馈，那就需要把时间花在有价值的地方，比如，解决自己和他人的痛点，这样你会收获别人的赞扬和鼓励。 反思和举一反三。可以尝试每周末花上点时间思考一下，本周做了哪些事儿？时间安排是否合理？还有哪些可以优化提高的地方？有点儿类似于我们常说的“复盘”。然后思考一下，下周的主要任务是什么？并根据优先级规划一下完成这些任务的顺序，也就是做一些下周的工作规划。 这样每周都能及时得到自己做时间管理之后的反馈，并有助于持续优化。通常坚持做时间管理一段时间以后，你都能在每次复盘时得到正反馈，这是有利于我们形成时间管理习惯的。但我这里也想强调一点，我们也要允许偶尔的“负反馈”，因为人的状态总是会有高潮和低谷的，控制好一个合理的度就可以了。 人最宝贵的财富就是时间，把时间用在刀刃上，必将让你的人生有更多收获。 如有侵权行为，请点击这里联系我删除 如发现疑问或者错误点击反馈]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2016%2F05%2F24%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[就在这里写一些，搭建成功的心情吧。 首先，有点小喜悦。搭建成功，也是经历9981难的。 其次，需要抽些时间把我的学习成长的路径，我的每一步脚印从我的笔记里，搬出来。整理在这里，供”未来人” 借鉴，交流和学习。 最后，感谢全世界这么多的开源项目的开发者的大力贡献。 The peace of the world Hello worldWelcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+</search>
