@@ -1,13 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[js 之 bind（）]]></title>
+    <url>%2F2019%2F05%2F07%2Fjs-%E4%B9%8B-bind%EF%BC%88%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[前言今天跟朋友讨论了一个面试题，深入探究了一下。 12// 3// 3 两次输出都是3。期初我们总结为：只执行第一个绑定的，后面执行多少都无效。 ？？？ 但是有人就问为啥后面不再输出4 和 5继续往下看⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️ Function​.prototype​.bind()以下是 MDN 给出了bind（）的定义：bind()方法创建一个新的函数，在调用时设置this关键字为提供的值。并在调用新函数时，将给定参数列表作为原函数的参数序列的前若干项。 语法：function.bind(thisArg[, arg1[, arg2[, …]]]) 返回值是：返回一个原函数的拷贝，并拥有指定的this值和初始参数。 描述：bind() 函数会创建一个新绑定函数（bound function，BF）。绑定函数是一个exotic function object（怪异函数对象，ECMAScript 2015中的术语），它包装了原函数对象。调用绑定函数通常会导致执行包装函数。 分割线 以上好对问题并没有很好的解释，看下面的案例 123456789101112131415Function.prototype.bind = function (scope ，...args ) &#123; const self = this return function () &#123; self.call(scope,args) &#125;&#125;const b = &#123;x:1&#125;const c = &#123;x:2&#125;const a = function () &#123; console.log(this.x)&#125;a.bind(b).bind(c)() // output : 1 删除上面Function 12345678const b = &#123;x:1&#125;const c = &#123;x:2&#125;const a = function () &#123; console.log(this.x)&#125;a.bind(b).bind(c)() // output : 1 输出也是1 总结：也就是说 bind()的实现，相当于使用函数在内部包了一个call/apply，第二次bind()相当于在包住第一次bind（）， 故第二次以后的bind 是无法生效的。 再看下面123456789101112131415const b = &#123;x:1&#125;const c = &#123;x:2&#125;const a = function () &#123; console.log(this.x)&#125;function test() &#123; (function()&#123; a.call(b) &#125;).call(c)&#125;test() //output : 1 差不多可以解释了 感兴趣的可以自己试试。 更加欢迎大家能给出更好的解释或加以指正。]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[hello LILI]]></title>
     <url>%2F2019%2F04%2F30%2Fhello-LILI%2F</url>
-    <content type="text"><![CDATA[HELLO LILIlili 这个名字来源于我曾经看过的一个电影 《狐狸与我》。 说的是一个小女孩着迷于一只田间狐狸的故事，她给狐狸起名叫”lili”,她从发现它，着迷于它，引诱它，了解它。就好像我着迷于人工智能。 LILI是个怎样的形象我对于人工智能我所知甚少，我不知道该如何给我心里的这位朋友一个更准确合适的定义。就好像现在我的神经女朋友现在在我身边模仿我敲代码的一举一动，我笑她笑 我动动手指她动动手指，像”LILI”一样。我相信有很多人都希望有一个这样的能够陪伴自己内心的她存在。所以我该如何定义这个朋友呢 123456function person (name,sex,age...) &#123; this.name = name; this.sex = sex; this.age = age; ...&#125; 最初的想法既然不知道我该如何去创建她，那就从一个baby开始。 她会摇头晃脑 她要会哭。 会笑 她要会拉屎。 她会拉尿。 她会睁眼 眨眼 闭眼。 会走路 前进 后退 会跑。 会伤心 123456789person.prototype.speak = function (who,words) &#123; console.log(who,&apos;speak &apos;,words);&#125;person.prototype.smill = function (who) &#123; console.log(who ,&apos;is smilling!&apos;);&#125;person.prototype.walk = function (who) &#123; console.log(who, &apos;is walking&apos;);&#125; LILI 会有哪些喜好？ 她会喜欢听歌吗 她会喜欢看电影吗 她喜欢在什么时候听歌？ 她喜欢和谁看电影呢？ LILI 的能力我知道说老师肯定不是太准确。抛去核心硬件如何实现不说，先假设。 听力LILI需要听力，她需要对千万种声音进行识别，分析，判断，并确认是什么发出的。还需要对这些声音做出应对的动作，比如：玻璃杯碎了，发出来声音，如果她看见了 ，如果应对；如果没看见，是否需要走到声音源附近，看见并确认发生了什么事？又该如何应对？ 视力需要识别物体，定义物体属性（动物，植物，会移动，不会移动…）分析物体运动，并预判可能风险。 嗅觉分析味道组成，识别味道发出的物体。 味觉识别酸甜苦辣咸的味道，并更新物体属性。 感觉物体是硬的 软的 干的 湿的 记录软硬程度 。 这些能力分别对应复杂的机器学习，深度学习，算法的演进，而现在很多的程序员在做很多类似方面的单独研究，但在未来得此五感者的天下。 总结我知道上面写的这些，很多逻辑问题，很多现在做不到的事情，但是后来的我总会嘲笑之前的我，无不例外，但这也是未来的我为之前的我感到骄傲的地方，同样从无例外。]]></content>
+    <content type="text"><![CDATA[HELLO LILIlili 这个名字来源于我曾经看过的一个电影 《狐狸与我》。 说的是一个小女孩着迷于一只田间狐狸的故事，她给狐狸起名叫”lili”,她从发现它，着迷于它，引诱它，了解它。就好像我着迷于人工智能。 LILI是个怎样的形象我对于人工智能我所知甚少，我不知道该如何给我心里的这位朋友一个更准确合适的定义。就好像现在我的神经女朋友现在在我身边模仿我敲代码的一举一动，我笑她笑 我动动手指她动动手指，像”LILI”一样。我相信有很多人都希望有一个这样的能够陪伴自己内心的她存在。所以我该如何定义这个朋友呢 123456function person (name,sex,age...) &#123; this.name = name; this.sex = sex; this.age = age; ...&#125; 最初的想法既然不知道我该如何去创建她，那就从一个baby开始。 她会摇头晃脑 她要会哭。 会笑 她要会拉屎。 她会拉尿。 她会睁眼 眨眼 闭眼。 会走路 前进 后退 会跑。 会伤心 123456789person.prototype.speak = function (who,words) &#123; console.log(who,&apos;speak &apos;,words);&#125;person.prototype.smill = function (who) &#123; console.log(who ,&apos;is smilling!&apos;);&#125;person.prototype.walk = function (who) &#123; console.log(who, &apos;is walking&apos;);&#125; LILI 会有哪些喜好？ 她会喜欢听歌吗 她会喜欢看电影吗 她喜欢在什么时候听歌？ 她喜欢和谁看电影呢？ LILI 的能力我知道说老师肯定不是太准确。抛去核心硬件如何实现不说，先假设。 听力LILI需要听力，她需要对千万种声音进行识别，分析，判断，并确认是什么发出的。还需要对这些声音做出应对的动作，比如：玻璃杯碎了，发出来声音，如果她看见了 ，如果应对；如果没看见，是否需要走到声音源附近，看见并确认发生了什么事？又该如何应对？ 视力需要识别物体，定义物体属性（动物，植物，会移动，不会移动…）分析物体运动，并预判可能风险。 嗅觉分析味道组成，识别味道发出的物体。 味觉识别酸甜苦辣咸的味道，并更新物体属性。 感觉物体是硬的 软的 干的 湿的 记录软硬程度 。 这些能力分别对应复杂的机器学习，深度学习，算法的演进，而现在很多的程序员在做很多类似方面的单独研究，但在未来得此五感者的天下。 总结我知道上面写的这些，很多逻辑问题，很多现在做不到的事情，但是后来的我总会嘲笑之前的我，无1例外，但这也是未来的我为之前的我感到骄傲的地方，同样从无例外。 补充 2019/05/05： 对于机器来说什么是好的？什么是坏的？因为感知也是有判断行为的]]></content>
       <categories>
+        <category>灵感</category>
         <category>LILI</category>
       </categories>
       <tags>
+        <tag>灵感</tag>
         <tag>LILI</tag>
       </tags>
   </entry>
@@ -53,17 +66,6 @@
     <content type="text"><![CDATA[layout: posttitle: Javascript 之 原型和继承subtitle: “JS this”date: 2019-04-24 14:32:03author: “幽僻处的行人”header-mask: 0.3categories: - javascript catalog: true tags: - javascript 等待研究]]></content>
   </entry>
   <entry>
-    <title><![CDATA[javascript 之 this]]></title>
-    <url>%2F2019%2F04%2F19%2Fjavascript-%E4%B9%8B-this%2F</url>
-    <content type="text"><![CDATA[等待研究]]></content>
-      <categories>
-        <category>javascript</category>
-      </categories>
-      <tags>
-        <tag>javascript</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[JS之事件循环机制和任务队列]]></title>
     <url>%2F2019%2F04%2F19%2FJS%E4%B9%8B%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%E6%9C%BA%E5%88%B6%E5%92%8C%E4%BB%BB%E5%8A%A1%E9%98%9F%E5%88%97%2F</url>
     <content type="text"><![CDATA[简单的认识事件循环先看一段代码：（先热个身）12345678910111213console.log(&apos;script start&apos;);setTimeout(function() &#123; console.log(&apos;setTimeout&apos;);&#125;, 0);Promise.resolve().then(function() &#123; console.log(&apos;promise1&apos;);&#125;).then(function() &#123; console.log(&apos;promise2&apos;);&#125;);console.log(&apos;script end&apos;); 打印顺序是什么？ 正确答案是：script start, script end, promise1, promise2, setTimeout 没关系 继续看 需要知道的专业名词术语： synchronous：同步任务 asynchronous：异步任务 task queue/callback queue：任务队列 execution context stack：执行栈 heap：堆 stack：栈 macro-task：宏任务 micro-task：微任务 首先我们还要知道两点：JavaScript是单线程的语言Event Loop是javascript的执行机制 异步任务包括：宏任务 和 微任务 同步任务：promise内的函数属于同步 .then()内部才属于异步微服务 new Promise(function(resolve) { console.log(‘7’); //属于同步任务 resolve();}).then(function() { console.log(‘8’) //属于异步微服务}) 宏任务： 包括整体代码script setTimeout setInterval setImmediate 微任务： 原生Promise(有些实现的promise将then方法放到了宏任务中) process.nextTick （process.nextTick(callback)类似node.js版的&quot;setTimeout&quot;） Object.observe(已废弃) MutationObserver 记住就行了。 事件循环规则： 骚年 先接我八字真言：先同后异，先微后宏 实例： Promise.resolve().then(()=&gt;{ console.log(&apos;Promise1&apos;) setTimeout(()=&gt;{ console.log(&apos;setTimeout2&apos;) Promise.resolve().then(()=&gt;{ console.log(&apos;Promise3&apos;) setTimeout(()=&gt;{ Promise.resolve().then(()=&gt;{ console.log(&apos;Promise5&apos;) setTimeout(()=&gt;{ console.log(&apos;setTimeout6&apos;) },0) }) console.log(&apos;setTimeout4&apos;) },0) }) },0) }) 先从上到下执行同步任务并全部执行完成 查找异步任务并分配到微任务列表 和 宏任务列表 （每个列表里先进栈先执行） 先执行微服务，并且查找微服务内部的 异步任务然后分配到微任务列表 和 宏任务列表 再执行宏任务，并且查找微服务内部的 异步任务然后分配到微任务列表 和 宏任务列表 既然是事件循环就不是一次就执行完毕了的，因为异步任务会有嵌套，最外层事件最先暴露出来，首先进入第一次循环 再先执行微服务，并查找，分配 再执行宏任务，并查找，分配 依次循环直至没有异步任务 执行结束 12345678910111213Promise.resolve().then(()=&gt;&#123; console.log(&apos;Promise1&apos;) setTimeout(()=&gt;&#123; console.log(&apos;setTimeout2&apos;) &#125;,0)&#125;)setTimeout(()=&gt;&#123; console.log(&apos;setTimeout1&apos;) Promise.resolve().then(()=&gt;&#123; console.log(&apos;Promise2&apos;) &#125;)&#125;,0) 第一回合 列出所有异步事件并逐个分配到宏服务和微任务里去，然后执行 先微后宏 微：promise1 宏：setTimeout1 先打印Promise1，setTimeout2进宏任务列表 setTimeout1，Promise2进微任务列表 第二回合 执行异步列表 先微后宏 先打印Promise2， 再打印setTimeout2， 到这里是不是有个大概的了解了，测验来了：（先用纸笔根据自己理解先答一遍，然后再看答案） 123456789101112131415161718192021222324252627282930313233343536console.log(&apos;1&apos;);setTimeout(function() &#123; console.log(&apos;2&apos;); process.nextTick(function() &#123; console.log(&apos;3&apos;); &#125;) new Promise(function(resolve) &#123; console.log(&apos;4&apos;); resolve(); &#125;).then(function() &#123; console.log(&apos;5&apos;) &#125;)&#125;)process.nextTick(function() &#123; console.log(&apos;6&apos;);&#125;)new Promise(function(resolve) &#123; console.log(&apos;7&apos;); resolve();&#125;).then(function() &#123; console.log(&apos;8&apos;)&#125;)setTimeout(function() &#123; console.log(&apos;9&apos;); process.nextTick(function() &#123; console.log(&apos;10&apos;); &#125;) new Promise(function(resolve) &#123; console.log(&apos;11&apos;); resolve(); &#125;).then(function() &#123; console.log(&apos;12&apos;) &#125;)&#125;) 第一轮事件循环流程分析如下： 整体script作为第一个宏任务进入主线程，遇到console.log，输出1。 遇到setTimeout，其回调函数被分发到宏任务Event Queue中。我们暂且记为setTimeout1。 遇到process.nextTick()，其回调函数被分发到微任务Event Queue中。我们记为process1。 遇到Promise，new Promise直接执行，输出7。then被分发到微任务Event Queue中。我们记为then1。 又遇到了setTimeout，其回调函数被分发到宏任务Event Queue中，我们记为setTimeout2。 宏任务Event Queue 微任务Event Queue setTimeout1 process1 setTimeout2 then1 上表是第一轮事件循环宏任务结束时各Event Queue的情况，此时已经输出了1和7。 我们发现了process1和then1两个微任务。 执行process1,输出6。 执行then1，输出8。 好了，第一轮事件循环正式结束，这一轮的结果是输出1，7，6，8。那么第二轮时间循环从setTimeout1宏任务开始： 首先输出2。接下来遇到了process.nextTick()，同样将其分发到微任务Event Queue中，记为process2。 new Promise立即执行输出4，then也分发到微任务Event Queue中，记为then2 宏任务Event Queue 微任务Event Queue setTimeout2 process3 then3 第三轮事件循环宏任务执行结束，执行两个微任务process3和then3。 输出10。 输出12。 第三轮事件循环结束，第三轮输出9，11，10，12。 整段代码，共进行了三次事件循环，完整的输出为1，7，6，8，2，4，3，5，9，11，10，12。(请注意，node环境下的事件监听依赖libuv与前端环境不完全相同，输出顺序可能会有误差) 结尾听到别人在讨论事件循环，我很想帮他们解答，可是我给出的答案都睡服不了我自己。所以决定自己整理一篇，我觉得可以让人理解的文章。下面还有别人的文章，建议大家多看看。广开言路，纳百家之言，行天下大事。 ⬇⬇⬇⬇⬇下方有补充 奉上文章： JS事件循环机制（event loop）之宏任务/微任务 如有侵权行为，请点击这里联系我删除 如发现疑问或者错误点击反馈 补充 2019年4月28号：有一个地方被我忽略了 123456789101112131415new Promise(function(resolve) &#123; console.log(&apos;6&apos;); setTimeout(function () &#123; console.log(&apos;7&apos;); resolve(); &#125;,0) // resolve();&#125;).then(function() &#123; console.log(&apos;8&apos;)&#125;)&gt;6&gt;7&gt;8 resolve()如果写在定时器里面了，会使then处于等待状态，如果写在定时器外面这输出：6 8 7]]></content>
@@ -75,16 +77,14 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[好了歌注]]></title>
-    <url>%2F2019%2F04%2F17%2F%E5%A5%BD%E4%BA%86%E6%AD%8C%E6%B3%A8%2F</url>
-    <content type="text"><![CDATA[[宋] 曹雪芹 1234567891011121314151617陋室空堂，当年笏满床；衰草枯杨，曾为歌舞场。蛛丝儿结满雕梁，绿纱今又糊在蓬窗上。说什么脂正浓，粉正香，如何两鬓又成霜？昨日黄土陇头送白骨，今宵红灯帐底卧鸳鸯。金满箱，银满箱，展眼乞丐人皆谤。正叹他人命不长，那知自己归来丧！训有方，保不定日后作强梁。择膏粱，谁承望流落在烟花巷！因嫌纱帽小，致使锁枷杠，昨怜破袄寒，今嫌紫蟒长：乱烘烘你方唱罢我登场，反认他乡是故乡。甚荒唐，到头来都是为他人作嫁衣裳！ 如有侵权行为，请点击这里联系我删除 如发现疑问或者错误点击反馈]]></content>
+    <title><![CDATA[javascript 之 this]]></title>
+    <url>%2F2019%2F04%2F19%2Fjavascript-%E4%B9%8B-this%2F</url>
+    <content type="text"><![CDATA[this]]></content>
       <categories>
-        <category>诗词</category>
-        <category>词</category>
+        <category>javascript</category>
       </categories>
       <tags>
-        <tag>诗词</tag>
-        <tag>词</tag>
+        <tag>javascript</tag>
       </tags>
   </entry>
   <entry>
@@ -109,6 +109,19 @@
       </categories>
       <tags>
         <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[好了歌注]]></title>
+    <url>%2F2019%2F04%2F17%2F%E5%A5%BD%E4%BA%86%E6%AD%8C%E6%B3%A8%2F</url>
+    <content type="text"><![CDATA[[宋] 曹雪芹 1234567891011121314151617陋室空堂，当年笏满床；衰草枯杨，曾为歌舞场。蛛丝儿结满雕梁，绿纱今又糊在蓬窗上。说什么脂正浓，粉正香，如何两鬓又成霜？昨日黄土陇头送白骨，今宵红灯帐底卧鸳鸯。金满箱，银满箱，展眼乞丐人皆谤。正叹他人命不长，那知自己归来丧！训有方，保不定日后作强梁。择膏粱，谁承望流落在烟花巷！因嫌纱帽小，致使锁枷杠，昨怜破袄寒，今嫌紫蟒长：乱烘烘你方唱罢我登场，反认他乡是故乡。甚荒唐，到头来都是为他人作嫁衣裳！ 如有侵权行为，请点击这里联系我删除 如发现疑问或者错误点击反馈]]></content>
+      <categories>
+        <category>诗词</category>
+        <category>词</category>
+      </categories>
+      <tags>
+        <tag>诗词</tag>
+        <tag>词</tag>
       </tags>
   </entry>
   <entry>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://libaibuzai.github.io/"/>
-  <updated>2019-04-30T14:50:09.405Z</updated>
+  <updated>2019-05-05T08:08:25.028Z</updated>
   <id>https://libaibuzai.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://libaibuzai.github.io/2019/04/30/hello-LILI/"/>
     <id>https://libaibuzai.github.io/2019/04/30/hello-LILI/</id>
     <published>2019-04-30T13:15:16.000Z</published>
-    <updated>2019-04-30T14:50:09.405Z</updated>
+    <updated>2019-05-05T08:08:25.028Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="HELLO-LILI"><a href="#HELLO-LILI" class="headerlink" title="HELLO LILI"></a>HELLO LILI</h1><p>lili 这个名字来源于我曾经看过的一个电影 <a href="https://movie.douban.com/subject/2028659/" target="_blank" rel="noopener">《狐狸与我》</a>。</p><p>说的是一个小女孩着迷于一只田间狐狸的故事，她给狐狸起名叫”lili”,她从发现它，着迷于它，引诱它，了解它。就好像我着迷于人工智能。</p><h2 id="LILI是个怎样的形象"><a href="#LILI是个怎样的形象" class="headerlink" title="LILI是个怎样的形象"></a>LILI是个怎样的形象</h2><p>我对于人工智能我所知甚少，我不知道该如何给我心里的这位朋友一个更准确合适的定义。<br>就好像现在我的神经女朋友现在在我身边模仿我敲代码的一举一动，我笑她笑 我动动手指她动动手指，像”LILI”一样。<br>我相信有很多人都希望有一个这样的能够陪伴自己内心的她存在。所以我该如何定义这个朋友呢</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function person (name,sex,age...) &#123;</span><br><span class="line">    this.name = name;</span><br><span class="line">    this.sex = sex;</span><br><span class="line">    this.age = age;</span><br><span class="line">   ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="最初的想法"><a href="#最初的想法" class="headerlink" title="最初的想法"></a>最初的想法</h2><p>既然不知道我该如何去创建她，那就从一个baby开始。</p><ol><li>她会摇头晃脑</li><li>她要会哭。</li><li>会笑</li><li>她要会拉屎。</li><li>她会拉尿。</li><li>她会睁眼 眨眼 闭眼。</li><li>会走路 前进 后退 会跑。</li><li>会伤心</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">person.prototype.speak = function (who,words) &#123;</span><br><span class="line">    console.log(who,&apos;speak &apos;,words);</span><br><span class="line">&#125;</span><br><span class="line">person.prototype.smill = function (who) &#123;</span><br><span class="line">    console.log(who ,&apos;is smilling!&apos;);</span><br><span class="line">&#125;</span><br><span class="line">person.prototype.walk = function (who) &#123;</span><br><span class="line">    console.log(who, &apos;is walking&apos;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="LILI-会有哪些喜好？"><a href="#LILI-会有哪些喜好？" class="headerlink" title="LILI 会有哪些喜好？"></a>LILI 会有哪些喜好？</h2><ol><li>她会喜欢听歌吗</li><li>她会喜欢看电影吗</li><li>她喜欢在什么时候听歌？</li><li>她喜欢和谁看电影呢？</li></ol><h2 id="LILI-的能力"><a href="#LILI-的能力" class="headerlink" title="LILI 的能力"></a>LILI 的能力</h2><p>我知道说老师肯定不是太准确。抛去核心硬件如何实现不说，先假设。</p><h3 id="听力"><a href="#听力" class="headerlink" title="听力"></a>听力</h3><p>LILI需要听力，她需要对千万种声音进行识别，分析，判断，并确认是什么发出的。还需要对这些声音做出应对的动作，<br>比如：玻璃杯碎了，发出来声音，如果她看见了 ，如果应对；如果没看见，是否需要走到声音源附近，看见并确认发生了什么事？又该如何应对？</p><h3 id="视力"><a href="#视力" class="headerlink" title="视力"></a>视力</h3><p>需要识别物体，定义物体属性（动物，植物，会移动，不会移动…）<br>分析物体运动，并预判可能风险。</p><h3 id="嗅觉"><a href="#嗅觉" class="headerlink" title="嗅觉"></a>嗅觉</h3><p>分析味道组成，识别味道发出的物体。</p><h3 id="味觉"><a href="#味觉" class="headerlink" title="味觉"></a>味觉</h3><p>识别酸甜苦辣咸的味道，并更新物体属性。</p><h3 id="感觉"><a href="#感觉" class="headerlink" title="感觉"></a>感觉</h3><p>物体是硬的 软的 干的 湿的  记录软硬程度 。</p><blockquote><p>这些能力分别对应复杂的机器学习，深度学习，算法的演进，而现在很多的程序员在做很多类似方面的单独研究，但在未来得此五感者的天下。</p></blockquote><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>我知道上面写的这些，很多逻辑问题，很多现在做不到的事情，但是后来的我总会嘲笑之前的我，无不例外，但这也是未来的我为之前的我感到骄傲的地方，同样从无例外。</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="HELLO-LILI"><a href="#HELLO-LILI" class="headerlink" title="HELLO LILI"></a>HELLO LILI</h1><p>lili 这个名字来源于我曾经看过的一个电影 <a href="https://movie.douban.com/subject/2028659/" target="_blank" rel="noopener">《狐狸与我》</a>。</p><p>说的是一个小女孩着迷于一只田间狐狸的故事，她给狐狸起名叫”lili”,她从发现它，着迷于它，引诱它，了解它。就好像我着迷于人工智能。</p><h2 id="LILI是个怎样的形象"><a href="#LILI是个怎样的形象" class="headerlink" title="LILI是个怎样的形象"></a>LILI是个怎样的形象</h2><p>我对于人工智能我所知甚少，我不知道该如何给我心里的这位朋友一个更准确合适的定义。<br>就好像现在我的神经女朋友现在在我身边模仿我敲代码的一举一动，我笑她笑 我动动手指她动动手指，像”LILI”一样。<br>我相信有很多人都希望有一个这样的能够陪伴自己内心的她存在。所以我该如何定义这个朋友呢</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function person (name,sex,age...) &#123;</span><br><span class="line">    this.name = name;</span><br><span class="line">    this.sex = sex;</span><br><span class="line">    this.age = age;</span><br><span class="line">   ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="最初的想法"><a href="#最初的想法" class="headerlink" title="最初的想法"></a>最初的想法</h2><p>既然不知道我该如何去创建她，那就从一个baby开始。</p><ol><li>她会摇头晃脑</li><li>她要会哭。</li><li>会笑</li><li>她要会拉屎。</li><li>她会拉尿。</li><li>她会睁眼 眨眼 闭眼。</li><li>会走路 前进 后退 会跑。</li><li>会伤心</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">person.prototype.speak = function (who,words) &#123;</span><br><span class="line">    console.log(who,&apos;speak &apos;,words);</span><br><span class="line">&#125;</span><br><span class="line">person.prototype.smill = function (who) &#123;</span><br><span class="line">    console.log(who ,&apos;is smilling!&apos;);</span><br><span class="line">&#125;</span><br><span class="line">person.prototype.walk = function (who) &#123;</span><br><span class="line">    console.log(who, &apos;is walking&apos;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="LILI-会有哪些喜好？"><a href="#LILI-会有哪些喜好？" class="headerlink" title="LILI 会有哪些喜好？"></a>LILI 会有哪些喜好？</h2><ol><li>她会喜欢听歌吗</li><li>她会喜欢看电影吗</li><li>她喜欢在什么时候听歌？</li><li>她喜欢和谁看电影呢？</li></ol><h2 id="LILI-的能力"><a href="#LILI-的能力" class="headerlink" title="LILI 的能力"></a>LILI 的能力</h2><p>我知道说老师肯定不是太准确。抛去核心硬件如何实现不说，先假设。</p><h3 id="听力"><a href="#听力" class="headerlink" title="听力"></a>听力</h3><p>LILI需要听力，她需要对千万种声音进行识别，分析，判断，并确认是什么发出的。还需要对这些声音做出应对的动作，<br>比如：玻璃杯碎了，发出来声音，如果她看见了 ，如果应对；如果没看见，是否需要走到声音源附近，看见并确认发生了什么事？又该如何应对？</p><h3 id="视力"><a href="#视力" class="headerlink" title="视力"></a>视力</h3><p>需要识别物体，定义物体属性（动物，植物，会移动，不会移动…）<br>分析物体运动，并预判可能风险。</p><h3 id="嗅觉"><a href="#嗅觉" class="headerlink" title="嗅觉"></a>嗅觉</h3><p>分析味道组成，识别味道发出的物体。</p><h3 id="味觉"><a href="#味觉" class="headerlink" title="味觉"></a>味觉</h3><p>识别酸甜苦辣咸的味道，并更新物体属性。</p><h3 id="感觉"><a href="#感觉" class="headerlink" title="感觉"></a>感觉</h3><p>物体是硬的 软的 干的 湿的  记录软硬程度 。</p><blockquote><p>这些能力分别对应复杂的机器学习，深度学习，算法的演进，而现在很多的程序员在做很多类似方面的单独研究，但在未来得此五感者的天下。</p></blockquote><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>我知道上面写的这些，很多逻辑问题，很多现在做不到的事情，但是<strong>后来的我</strong>总会嘲笑<strong>之前的我</strong>，无1例外，但这也是<strong>未来的我</strong>为<strong>之前的我</strong>感到骄傲的地方，同样从无例外。</p><blockquote><p>补充 2019/05/05：</p></blockquote><p> <code>对于机器来说什么是好的？什么是坏的？因为感知也是有判断行为的</code></p>]]></content>
     
     <summary type="html">
     
@@ -31,8 +31,12 @@
     
     </summary>
     
-      <category term="LILI" scheme="https://libaibuzai.github.io/categories/LILI/"/>
+      <category term="灵感" scheme="https://libaibuzai.github.io/categories/%E7%81%B5%E6%84%9F/"/>
     
+      <category term="LILI" scheme="https://libaibuzai.github.io/categories/%E7%81%B5%E6%84%9F/LILI/"/>
+    
+    
+      <category term="灵感" scheme="https://libaibuzai.github.io/tags/%E7%81%B5%E6%84%9F/"/>
     
       <category term="LILI" scheme="https://libaibuzai.github.io/tags/LILI/"/>
     
@@ -137,31 +141,6 @@
   </entry>
   
   <entry>
-    <title>javascript 之 this</title>
-    <link href="https://libaibuzai.github.io/2019/04/19/javascript-%E4%B9%8B-this/"/>
-    <id>https://libaibuzai.github.io/2019/04/19/javascript-之-this/</id>
-    <published>2019-04-18T16:00:00.000Z</published>
-    <updated>2019-04-28T02:31:51.971Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="等待研究"><a href="#等待研究" class="headerlink" title="等待研究"></a>等待研究</h1>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;等待研究&quot;&gt;&lt;a href=&quot;#等待研究&quot; class=&quot;headerlink&quot; title=&quot;等待研究&quot;&gt;&lt;/a&gt;等待研究&lt;/h1&gt;
-      
-    
-    </summary>
-    
-      <category term="javascript" scheme="https://libaibuzai.github.io/categories/javascript/"/>
-    
-    
-      <category term="javascript" scheme="https://libaibuzai.github.io/tags/javascript/"/>
-    
-  </entry>
-  
-  <entry>
     <title>JS之事件循环机制和任务队列</title>
     <link href="https://libaibuzai.github.io/2019/04/19/JS%E4%B9%8B%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%E6%9C%BA%E5%88%B6%E5%92%8C%E4%BB%BB%E5%8A%A1%E9%98%9F%E5%88%97/"/>
     <id>https://libaibuzai.github.io/2019/04/19/JS之事件循环机制和任务队列/</id>
@@ -187,32 +166,27 @@
   </entry>
   
   <entry>
-    <title>好了歌注</title>
-    <link href="https://libaibuzai.github.io/2019/04/17/%E5%A5%BD%E4%BA%86%E6%AD%8C%E6%B3%A8/"/>
-    <id>https://libaibuzai.github.io/2019/04/17/好了歌注/</id>
-    <published>2019-04-16T16:00:00.000Z</published>
-    <updated>2019-04-17T08:58:51.740Z</updated>
+    <title>javascript 之 this</title>
+    <link href="https://libaibuzai.github.io/2019/04/19/javascript-%E4%B9%8B-this/"/>
+    <id>https://libaibuzai.github.io/2019/04/19/javascript-之-this/</id>
+    <published>2019-04-18T16:00:00.000Z</published>
+    <updated>2019-05-07T08:19:21.219Z</updated>
     
-    <content type="html"><![CDATA[<p><strong>[宋] 曹雪芹</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">陋室空堂，当年笏满床；</span><br><span class="line">衰草枯杨，曾为歌舞场。</span><br><span class="line">蛛丝儿结满雕梁，</span><br><span class="line">绿纱今又糊在蓬窗上。</span><br><span class="line">说什么脂正浓，粉正香，</span><br><span class="line">如何两鬓又成霜？</span><br><span class="line">昨日黄土陇头送白骨，</span><br><span class="line">今宵红灯帐底卧鸳鸯。</span><br><span class="line">金满箱，银满箱，展眼乞丐人皆谤。</span><br><span class="line">正叹他人命不长，那知自己归来丧！</span><br><span class="line">训有方，保不定日后作强梁。</span><br><span class="line">择膏粱，谁承望流落在烟花巷！</span><br><span class="line">因嫌纱帽小，致使锁枷杠，</span><br><span class="line">昨怜破袄寒，今嫌紫蟒长：</span><br><span class="line">乱烘烘你方唱罢我登场，</span><br><span class="line">反认他乡是故乡。甚荒唐，</span><br><span class="line">到头来都是为他人作嫁衣裳！</span><br></pre></td></tr></table></figure><blockquote><p>如有侵权行为，请<a href="https://github.com/libaibuzai/libaibuzai/issues" target="_blank" rel="noopener">点击这里</a>联系我删除</p></blockquote><blockquote><p><a href="https://github.com/libaibuzai/libaibuzai/issues" target="_blank" rel="noopener">如发现疑问或者错误点击反馈</a></p></blockquote>]]></content>
+    <content type="html"><![CDATA[<h1 id="this"><a href="#this" class="headerlink" title="this"></a>this</h1>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;strong&gt;[宋] 曹雪芹&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span clas
+        &lt;h1 id=&quot;this&quot;&gt;&lt;a href=&quot;#this&quot; class=&quot;headerlink&quot; title=&quot;this&quot;&gt;&lt;/a&gt;this&lt;/h1&gt;
       
     
     </summary>
     
-      <category term="诗词" scheme="https://libaibuzai.github.io/categories/%E8%AF%97%E8%AF%8D/"/>
-    
-      <category term="词" scheme="https://libaibuzai.github.io/categories/%E8%AF%97%E8%AF%8D/%E8%AF%8D/"/>
+      <category term="javascript" scheme="https://libaibuzai.github.io/categories/javascript/"/>
     
     
-      <category term="诗词" scheme="https://libaibuzai.github.io/tags/%E8%AF%97%E8%AF%8D/"/>
-    
-      <category term="词" scheme="https://libaibuzai.github.io/tags/%E8%AF%8D/"/>
+      <category term="javascript" scheme="https://libaibuzai.github.io/tags/javascript/"/>
     
   </entry>
   
@@ -269,6 +243,36 @@
     
     
       <category term="javascript" scheme="https://libaibuzai.github.io/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>好了歌注</title>
+    <link href="https://libaibuzai.github.io/2019/04/17/%E5%A5%BD%E4%BA%86%E6%AD%8C%E6%B3%A8/"/>
+    <id>https://libaibuzai.github.io/2019/04/17/好了歌注/</id>
+    <published>2019-04-16T16:00:00.000Z</published>
+    <updated>2019-04-17T08:58:51.740Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>[宋] 曹雪芹</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">陋室空堂，当年笏满床；</span><br><span class="line">衰草枯杨，曾为歌舞场。</span><br><span class="line">蛛丝儿结满雕梁，</span><br><span class="line">绿纱今又糊在蓬窗上。</span><br><span class="line">说什么脂正浓，粉正香，</span><br><span class="line">如何两鬓又成霜？</span><br><span class="line">昨日黄土陇头送白骨，</span><br><span class="line">今宵红灯帐底卧鸳鸯。</span><br><span class="line">金满箱，银满箱，展眼乞丐人皆谤。</span><br><span class="line">正叹他人命不长，那知自己归来丧！</span><br><span class="line">训有方，保不定日后作强梁。</span><br><span class="line">择膏粱，谁承望流落在烟花巷！</span><br><span class="line">因嫌纱帽小，致使锁枷杠，</span><br><span class="line">昨怜破袄寒，今嫌紫蟒长：</span><br><span class="line">乱烘烘你方唱罢我登场，</span><br><span class="line">反认他乡是故乡。甚荒唐，</span><br><span class="line">到头来都是为他人作嫁衣裳！</span><br></pre></td></tr></table></figure><blockquote><p>如有侵权行为，请<a href="https://github.com/libaibuzai/libaibuzai/issues" target="_blank" rel="noopener">点击这里</a>联系我删除</p></blockquote><blockquote><p><a href="https://github.com/libaibuzai/libaibuzai/issues" target="_blank" rel="noopener">如发现疑问或者错误点击反馈</a></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;[宋] 曹雪芹&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span clas
+      
+    
+    </summary>
+    
+      <category term="诗词" scheme="https://libaibuzai.github.io/categories/%E8%AF%97%E8%AF%8D/"/>
+    
+      <category term="词" scheme="https://libaibuzai.github.io/categories/%E8%AF%97%E8%AF%8D/%E8%AF%8D/"/>
+    
+    
+      <category term="诗词" scheme="https://libaibuzai.github.io/tags/%E8%AF%97%E8%AF%8D/"/>
+    
+      <category term="词" scheme="https://libaibuzai.github.io/tags/%E8%AF%8D/"/>
     
   </entry>
   
